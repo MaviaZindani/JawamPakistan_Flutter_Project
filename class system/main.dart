@@ -21,7 +21,7 @@ class Human {
   String age = '';
 
 
-  Human({this.name, this.age});
+  Human({this.name = '', this.age = ''});
   canwalk() {}
   canEat() {}
   canSleep() {}
