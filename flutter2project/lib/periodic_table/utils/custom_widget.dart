@@ -17,62 +17,70 @@ class ChemicalBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 60,
-      width: 60,
-      decoration: BoxDecoration(
-        border: Border.all(color: color,width: 2.0)
-      ),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Text(boxnumber,style: TextStyle(color: color,fontSize: 7),),
-            ],
-          ),
-          Column(
-            children: [
-              Text(
-                chemicalsambel,
-                style: TextStyle(
-                  color: color,
-                    fontFamily: AutofillHints.addressCityAndState,
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold),
-              ),
-              Text(
-                chemicalename,
-                style: TextStyle(
-                  color: color,
-                    fontFamily: AutofillHints.addressCityAndState,
-                    fontSize: 7,
-                    fontWeight: FontWeight.normal),
-              ),
-              Text(
-                "($chemicalenumber)",
-                style: TextStyle(
-                  color: color,
-                    fontFamily: AutofillHints.addressCityAndState,
-                    fontSize: 7,
-                    fontWeight: FontWeight.normal),
-              )
-            ],
-          )
-        ],
+    return Padding(
+      padding: const EdgeInsets.all(3.0),
+      child: Container(
+        height: 60,
+        width: 60,
+        decoration: BoxDecoration(border: Border.all(color: color, width: 2.0)),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Text(
+                  boxnumber,
+                  style: TextStyle(color: color, fontSize: 7),
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                Text(
+                  chemicalsambel,
+                  style: TextStyle(
+                      color: color,
+                      fontFamily: AutofillHints.addressCityAndState,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  chemicalename,
+                  style: TextStyle(
+                      color: color,
+                      fontFamily: AutofillHints.addressCityAndState,
+                      fontSize: 7,
+                      fontWeight: FontWeight.normal),
+                ),
+                Text(
+                  "($chemicalenumber)",
+                  style: TextStyle(
+                      color: color,
+                      fontFamily: AutofillHints.addressCityAndState,
+                      fontSize: 7,
+                      fontWeight: FontWeight.normal),
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
 }
 
 class EmptyPlace extends StatelessWidget {
-final double height;
-final double width;
-  const EmptyPlace({super.key,required this.height,required this.width});
+  final double height;
+  final double width;
+  final double? padding;
+  const EmptyPlace({super.key, required this.height, required this.width, this.padding});
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: height,
-      width: width,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal:  padding ?? 0),
+      child: Container(
+        height: height,
+        width: width,
+      ),
     );
   }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter2project/home_screen.dart';
+import 'package:flutter2project/main_custom_widget.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -384,7 +386,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-          
+          const SizedBox(height: 100,),
+          MoveToNext(moveTo: const HomeScreen(), text: 'Goto Preiodic Table User interface')
         ],
       ),
     );
